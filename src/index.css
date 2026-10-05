@@ -1,0 +1,1001 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: #1F2D4A;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  html:not(.dark) {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: #070A12;
+    color: #E2E8F0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #070A12;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1F2D4A;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2E416B;
+  }
+}
+
+/* ============================================================
+   LIGHT MODE — Global border reset
+   ============================================================ */
+html:not(.dark) * {
+  border-color: #E2E8F0;
+}
+
+/* ============================================================
+   LIGHT MODE — Body & Scrollbar
+   ============================================================ */
+html:not(.dark) body {
+  background-color: #F8FAFC !important;
+  color: #1E293B !important;
+}
+
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* ============================================================
+   LIGHT MODE — Cloud surface & card color system
+   ============================================================ */
+html:not(.dark) .bg-cloud-bg,
+html:not(.dark) .bg-cloud-bg\/60,
+html:not(.dark) .bg-cloud-bg\/80,
+html:not(.dark) .bg-cloud-bg\/85 {
+  background-color: #F8FAFC !important;
+}
+
+html:not(.dark) .bg-cloud-surface,
+html:not(.dark) .bg-cloud-surface\/80,
+html:not(.dark) .bg-cloud-surface\/90,
+html:not(.dark) .bg-cloud-surface\/98 {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 2px 12px -2px rgba(0,0,0,0.06), 0 1px 4px -1px rgba(0,0,0,0.04);
+}
+
+html:not(.dark) .bg-cloud-card,
+html:not(.dark) .bg-cloud-card\/40,
+html:not(.dark) .bg-cloud-card\/60,
+html:not(.dark) .bg-cloud-card\/70,
+html:not(.dark) .bg-cloud-card\/80 {
+  background-color: #F1F5F9 !important;
+}
+
+html:not(.dark) .bg-cloud-cardHover {
+  background-color: #E8EDF4 !important;
+}
+
+html:not(.dark) .border-cloud-border,
+html:not(.dark) .border-cloud-border\/40,
+html:not(.dark) .border-cloud-border\/50,
+html:not(.dark) .border-cloud-border\/60,
+html:not(.dark) .border-cloud-border\/70,
+html:not(.dark) .border-cloud-border\/80,
+html:not(.dark) .border-cloud-border\/90 {
+  border-color: #CBD5E1 !important;
+}
+
+/* ============================================================
+   LIGHT MODE — Slate color system
+   ============================================================ */
+html:not(.dark) .bg-slate-950,
+html:not(.dark) .bg-slate-950\/40,
+html:not(.dark) .bg-slate-950\/80 {
+  background-color: #E8EEF6 !important;
+  color: #0F172A !important;
+}
+
+html:not(.dark) .bg-slate-900,
+html:not(.dark) .bg-slate-900\/60,
+html:not(.dark) .bg-slate-900\/80,
+html:not(.dark) .bg-slate-900\/90 {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+html:not(.dark) .bg-slate-800,
+html:not(.dark) .bg-slate-800\/40,
+html:not(.dark) .bg-slate-800\/60,
+html:not(.dark) .bg-slate-800\/80 {
+  background-color: #E2E8F0 !important;
+  color: #1E293B !important;
+}
+
+html:not(.dark) .border-slate-700,
+html:not(.dark) .border-slate-700\/60,
+html:not(.dark) .border-slate-700\/80,
+html:not(.dark) .border-slate-750,
+html:not(.dark) .border-slate-800 {
+  border-color: #CBD5E1 !important;
+}
+
+/* ============================================================
+   LIGHT MODE — Typography global overrides
+   ============================================================ */
+html:not(.dark) .text-white {
+  color: #0F172A;
+}
+html:not(.dark) .text-slate-100 {
+  color: #0F172A;
+}
+html:not(.dark) .text-slate-200 {
+  color: #1E293B;
+}
+html:not(.dark) .text-slate-300 {
+  color: #334155;
+}
+html:not(.dark) .text-slate-400 {
+  color: #64748B;
+}
+html:not(.dark) .text-slate-500 {
+  color: #94A3B8;
+}
+html:not(.dark) .text-slate-600 {
+  color: #94A3B8;
+}
+
+/* ============================================================
+   LIGHT MODE — Header / Navbar
+   ============================================================ */
+html:not(.dark) header.fixed {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) .glass-panel {
+  background: rgba(255, 255, 255, 0.90);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================================
+   LIGHT MODE — Footer
+   ============================================================ */
+html:not(.dark) footer {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* ============================================================
+   LIGHT MODE — Hero section (VPC topology card + badges + CTAs)
+   ============================================================ */
+
+/* Hero background */
+html:not(.dark) #home {
+  background-color: #F8FAFC;
+}
+
+/* Status "open for work" pill */
+html:not(.dark) #home .inline-flex.bg-cloud-card {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Quick badges: Ubuntu Linux, AWS Core Services, etc. */
+html:not(.dark) #home .bg-slate-900\/90 {
+  background-color: #E8EEF6 !important;
+  border-color: #CBD5E1 !important;
+  color: #1E293B !important;
+}
+
+/* CTA buttons: Download Resume, GitHub */
+html:not(.dark) #home .bg-cloud-card.border-cloud-border,
+html:not(.dark) #home a.bg-cloud-card\/60 {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+  color: #1E293B !important;
+}
+
+/* VPC Architecture Card container */
+html:not(.dark) #home .rounded-2xl.bg-cloud-surface\/80 {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+  box-shadow: 0 4px 24px -4px rgba(0,0,0,0.1);
+}
+
+/* VPC node card (normal + hovered state) */
+html:not(.dark) #home .bg-cloud-card\/70.border-cloud-border {
+  background-color: #F4F7FA !important;
+  border-color: #CBD5E1 !important;
+}
+
+html:not(.dark) #home .bg-cloud-cardHover.border-aws-orange {
+  background-color: #FFF8EC !important;
+}
+
+/* Node icon box inside VPC card */
+html:not(.dark) #home .bg-slate-900\/90.border {
+  background-color: #EEF2F7 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Badge labels inside nodes: "Public Subnet", "0.0.0.0/0" */
+html:not(.dark) #home span.bg-slate-800.border-slate-700 {
+  background-color: #E2E8F0 !important;
+  border-color: #CBD5E1 !important;
+  color: #334155 !important;
+}
+
+/* Expandable detail text on hover */
+html:not(.dark) #home div.border-t.border-cloud-border\/70 .text-slate-300 {
+  color: #334155 !important;
+}
+
+/* Bottom bar of VPC card */
+html:not(.dark) #home .border-t.border-cloud-border\/60 .text-slate-400 {
+  color: #64748B !important;
+}
+
+/* ============================================================
+   LIGHT MODE — About section (Cloud & Infrastructure Enthusiast)
+   ============================================================ */
+
+html:not(.dark) #about {
+  background-color: #F8FAFC !important;
+}
+
+/* Section label badge */
+html:not(.dark) #about .inline-flex.items-center.bg-cloud-card {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* About cards */
+html:not(.dark) #about .rounded-xl.bg-cloud-surface {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* Icon container in about cards */
+html:not(.dark) #about .bg-cloud-card.border-cloud-border {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Subtitle chip on card */
+html:not(.dark) #about span.bg-cloud-card {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Tag chips inside about cards */
+html:not(.dark) #about span.bg-slate-900.border-slate-700\/80,
+html:not(.dark) #about span.bg-slate-900 {
+  background-color: #E8EEF6 !important;
+  border-color: #CBD5E1 !important;
+  color: #334155 !important;
+}
+
+/* ─── HANDS-ON COMPETENCIES BOX ─── */
+html:not(.dark) #about .rounded-2xl.bg-cloud-surface\/90 {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* "VERIFIED BY ACADEMIC LABS" badge */
+html:not(.dark) #about span.text-cloud-sky.bg-cloud-sky\/10 {
+  background-color: #EBF5FF !important;
+  border-color: #BAE6FD !important;
+}
+
+/* Competency item cards */
+html:not(.dark) #about .bg-cloud-card\/60.border-cloud-border\/60 {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Competency label text */
+html:not(.dark) #about span.text-xs.font-medium.text-slate-200 {
+  color: #1E293B !important;
+}
+
+/* ============================================================
+   LIGHT MODE — Skills section
+   ============================================================ */
+
+html:not(.dark) #skills {
+  background-color: #F8FAFC !important;
+}
+
+/* Category cards */
+html:not(.dark) #skills .rounded-xl.bg-cloud-surface {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+html:not(.dark) #skills .bg-cloud-card.border-cloud-border {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Skill chip */
+html:not(.dark) #skills .bg-cloud-card\/80.border-cloud-border {
+  background-color: #F4F7FA !important;
+  border-color: #E2E8F0 !important;
+  color: #1E293B !important;
+}
+
+html:not(.dark) #skills .bg-cloud-cardHover.border-aws-orange {
+  background-color: #FFF8EC !important;
+  color: #0F172A !important;
+}
+
+/* Skill tag badge inside chip */
+html:not(.dark) #skills span.bg-slate-900.border-slate-700 {
+  background-color: #E8EEF6 !important;
+  border-color: #CBD5E1 !important;
+  color: #334155 !important;
+}
+
+/* Count badge on filter pills */
+html:not(.dark) #skills span.bg-slate-900.border-slate-700.text-slate-300 {
+  background-color: #E8EEF6 !important;
+  border-color: #CBD5E1 !important;
+  color: #475569 !important;
+}
+
+/* Skill tooltip popup */
+html:not(.dark) #skills .absolute.bg-slate-950 {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+  color: #1E293B !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
+}
+
+html:not(.dark) #skills .absolute.bg-slate-950 .text-slate-300 {
+  color: #334155 !important;
+}
+
+/* ============================================================
+   LIGHT MODE — Projects section
+   ============================================================ */
+
+html:not(.dark) #projects {
+  background-color: #F8FAFC !important;
+}
+
+html:not(.dark) #projects .bg-cloud-surface {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+html:not(.dark) #projects .bg-slate-950\/40 {
+  background-color: rgba(241, 245, 249, 0.85) !important;
+}
+
+/* PROJECT 0x badge */
+html:not(.dark) #projects .bg-slate-900.border-slate-750 {
+  background-color: #E8EEF6 !important;
+  border-color: #CBD5E1 !important;
+  color: #FF9900 !important;
+}
+
+/* Tech stack chips */
+html:not(.dark) #projects span.bg-slate-900.border-slate-800 {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+  color: #475569 !important;
+}
+
+/* Flow step index badge */
+html:not(.dark) #projects span.bg-slate-900.border-slate-700 {
+  background-color: #E2E8F0 !important;
+  border-color: #CBD5E1 !important;
+  color: #38BDF8 !important;
+}
+
+/* Card icon container */
+html:not(.dark) #projects .bg-cloud-card.border-cloud-border {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Action buttons on project cards */
+html:not(.dark) #projects .bg-cloud-card.hover\:bg-cloud-cardHover {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+  color: #1E293B !important;
+}
+
+/* GitHub button */
+html:not(.dark) #projects a.bg-slate-900\/80 {
+  background-color: #E2E8F0 !important;
+  border-color: #CBD5E1 !important;
+  color: #475569 !important;
+}
+
+/* Transparency banner */
+html:not(.dark) #projects .bg-cloud-card\/40 {
+  background-color: rgba(241, 245, 249, 0.7) !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* ============================================================
+   LIGHT MODE — Architecture Lab
+   ============================================================ */
+
+html:not(.dark) #architecture-lab {
+  background-color: #F8FAFC !important;
+}
+
+html:not(.dark) #architecture-lab .bg-cloud-surface {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+html:not(.dark) #architecture-lab .bg-cloud-card\/70 {
+  background-color: #F4F7FA !important;
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) #architecture-lab .bg-cloud-card {
+  background-color: #F1F5F9 !important;
+}
+
+/* Filter pills */
+html:not(.dark) #architecture-lab button.bg-cloud-card.text-slate-400 {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+  color: #475569 !important;
+}
+
+html:not(.dark) #architecture-lab button.bg-slate-800.text-white {
+  background-color: #E2E8F0 !important;
+  border-color: #CBD5E1 !important;
+  color: #1E293B !important;
+}
+
+/* Component node grid icon containers */
+html:not(.dark) #architecture-lab .bg-slate-900.text-slate-300 {
+  background-color: #EEF2F7 !important;
+  color: #334155 !important;
+}
+
+/* Category label on component card */
+html:not(.dark) #architecture-lab span.text-slate-400.text-\[9px\] {
+  color: #64748B !important;
+}
+
+/* Component name text */
+html:not(.dark) #architecture-lab .text-xs.font-bold.text-slate-100 {
+  color: #0F172A !important;
+}
+
+/* AWS service label */
+html:not(.dark) #architecture-lab .text-\[10px\].font-mono.text-slate-400 {
+  color: #64748B !important;
+}
+
+/* "Multi-AZ Topology" badge */
+html:not(.dark) #architecture-lab span.bg-slate-900.border-slate-700.text-slate-400 {
+  background-color: #E8EEF6 !important;
+  border-color: #CBD5E1 !important;
+  color: #475569 !important;
+}
+
+/* Mini legend swatches */
+html:not(.dark) #architecture-lab span.bg-sky-900\/60.border-sky-700 {
+  background-color: #DBEAFE !important;
+  border-color: #93C5FD !important;
+}
+
+html:not(.dark) #architecture-lab span.bg-emerald-900\/60.border-emerald-700 {
+  background-color: #D1FAE5 !important;
+  border-color: #6EE7B7 !important;
+}
+
+/* Inspector panel sections */
+html:not(.dark) #architecture-lab .bg-cloud-card\/60 {
+  background-color: #F4F7FA !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* ============================================================
+   LIGHT MODE — Linux Lab (terminal stays dark, right panel adapts)
+   ============================================================ */
+
+/* Keep terminal authentically dark */
+html:not(.dark) #linux-lab [class*="0b0f19"] {
+  background-color: #0B0F19 !important;
+}
+
+html:not(.dark) #linux-lab [class*="121826"] {
+  background-color: #121826 !important;
+}
+
+html:not(.dark) #linux-lab [class*="090d15"] {
+  background-color: #090D15 !important;
+}
+
+html:not(.dark) #linux-lab .bg-slate-950\/40 {
+  background-color: rgba(2, 6, 23, 0.7) !important;
+}
+
+/* Terminal text stays light */
+html:not(.dark) #linux-lab [class*="0b0f19"] .text-slate-200,
+html:not(.dark) #linux-lab [class*="0b0f19"] .text-slate-300,
+html:not(.dark) #linux-lab [class*="0b0f19"] pre {
+  color: #E2E8F0 !important;
+}
+
+html:not(.dark) #linux-lab [class*="0b0f19"] .text-slate-500 {
+  color: #64748B !important;
+}
+
+html:not(.dark) #linux-lab [class*="0b0f19"] .text-white {
+  color: #FFFFFF !important;
+}
+
+html:not(.dark) #linux-lab [class*="0b0f19"] input {
+  color: #FFFFFF !important;
+}
+
+/* Right panel — Command Analysis card */
+html:not(.dark) #linux-lab .bg-cloud-surface.border-cloud-border.rounded-2xl {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* Example usage code block */
+html:not(.dark) #linux-lab .bg-cloud-card\/60.border-cloud-border\/60 {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) #linux-lab code.bg-slate-900.border-slate-800 {
+  background-color: #EEF2F7 !important;
+  border-color: #E2E8F0 !important;
+  color: #1E293B !important;
+}
+
+/* Real-World Scenario box */
+html:not(.dark) #linux-lab .bg-slate-900\/80.border-slate-700\/80 {
+  background-color: #F4F7FA !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Category badge */
+html:not(.dark) #linux-lab .bg-slate-800.border-slate-700 {
+  background-color: #E2E8F0 !important;
+  border-color: #CBD5E1 !important;
+  color: #334155 !important;
+}
+
+/* Quick command pills (above terminal) */
+html:not(.dark) #linux-lab button.bg-cloud-card.text-slate-300 {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+  color: #475569 !important;
+}
+
+/* Target host badge */
+html:not(.dark) #linux-lab .bg-cloud-card.px-3.py-2 {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* ============================================================
+   LIGHT MODE — Networking Lab
+   ============================================================ */
+
+html:not(.dark) #networking {
+  background-color: #F8FAFC !important;
+}
+
+/* Section header domain badge */
+html:not(.dark) #networking .bg-cloud-card.px-3.py-2 {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Lifecycle container card */
+html:not(.dark) #networking .bg-cloud-surface.border-cloud-border.rounded-2xl {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* Step cards in lifecycle flow grid */
+html:not(.dark) #networking .bg-cloud-card\/60.border-cloud-border {
+  background-color: #F4F7FA !important;
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) #networking .bg-cloud-cardHover.border-cloud-sky {
+  background-color: #E8F4FD !important;
+  border-color: #38BDF8 !important;
+}
+
+/* Icon box inside step card */
+html:not(.dark) #networking .bg-slate-900.border-slate-700 {
+  background-color: #E8EEF6 !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* Step label */
+html:not(.dark) #networking .text-xs.font-bold.text-white {
+  color: #0F172A !important;
+}
+
+/* Explanation banner bottom of lifecycle */
+html:not(.dark) #networking .bg-slate-900\/80.border-slate-800 {
+  background-color: #EEF4F9 !important;
+  border-color: #CBD5E1 !important;
+}
+
+html:not(.dark) #networking .bg-slate-900\/80.border-slate-800 .text-cloud-sky {
+  color: #0284C7 !important;
+}
+
+/* Concept cards */
+html:not(.dark) #networking button.bg-cloud-surface.border-cloud-border {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) #networking button.bg-cloud-cardHover.border-aws-orange {
+  background-color: #FFF8EC !important;
+  border-color: #FF9900 !important;
+}
+
+/* Concept card tag badge */
+html:not(.dark) #networking span.bg-slate-900.border-slate-700.text-slate-300 {
+  background-color: #E8EEF6 !important;
+  border-color: #CBD5E1 !important;
+  color: #334155 !important;
+}
+
+/* Deep concept detail panel */
+html:not(.dark) #networking .lg\:col-span-5.bg-cloud-surface {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+html:not(.dark) #networking .bg-cloud-card\/70.border-cloud-border\/70 {
+  background-color: #F4F7FA !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* ============================================================
+   LIGHT MODE — Education, Certifications & Strengths
+   ============================================================ */
+
+html:not(.dark) #education {
+  background-color: #F8FAFC !important;
+}
+
+/* Timeline education cards */
+html:not(.dark) #education .bg-cloud-surface.border-cloud-border.rounded-2xl {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+html:not(.dark) #education .bg-cloud-surface.border.border-cloud-border {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* Timeline dot */
+html:not(.dark) #education .bg-slate-900.border-2.border-aws-orange {
+  background-color: #FFFFFF !important;
+}
+
+/* Academic highlight badge ("Third Year: 8.67 CGPA") */
+html:not(.dark) #education .bg-slate-900.border-slate-750,
+html:not(.dark) #education span.bg-slate-800\/80 {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+  color: #334155 !important;
+}
+
+/* Cert category badge (CORE TRAINING etc.) */
+html:not(.dark) #education span.bg-slate-900.text-cloud-sky {
+  background-color: #EEF4FA !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* Cert topic bullet */
+html:not(.dark) #education .text-xs.text-slate-300.font-mono {
+  color: #334155 !important;
+}
+
+/* Authenticity note box */
+html:not(.dark) #education .bg-cloud-card\/40.border-cloud-border {
+  background-color: rgba(241, 245, 249, 0.7) !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Strength cards */
+html:not(.dark) #education .bg-cloud-surface.border-cloud-border.hover\:border-slate-500 {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+/* Strength icon container */
+html:not(.dark) #education .w-9.h-9.bg-cloud-card {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Strength title */
+html:not(.dark) #education h4.text-sm.font-bold.text-white {
+  color: #0F172A !important;
+}
+
+/* ============================================================
+   LIGHT MODE — Contact section
+   ============================================================ */
+
+html:not(.dark) #contact {
+  background-color: #F8FAFC !important;
+}
+
+html:not(.dark) #contact .bg-cloud-surface.border-cloud-border {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+html:not(.dark) #contact .bg-cloud-card.border-cloud-border {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* MAILTO ACTION badge */
+html:not(.dark) #contact span.bg-slate-900.border-slate-700.text-slate-400 {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+  color: #475569 !important;
+}
+
+/* Form inputs */
+html:not(.dark) input,
+html:not(.dark) textarea {
+  color: #0F172A !important;
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* Label text on form */
+html:not(.dark) #contact label.text-slate-300 {
+  color: #334155 !important;
+}
+
+/* Quick action GitHub link */
+html:not(.dark) #contact a.bg-cloud-surface.border-cloud-border {
+  background-color: #FFFFFF !important;
+  border-color: #CBD5E1 !important;
+  color: #1E293B !important;
+}
+
+/* ============================================================
+   LIGHT MODE — Modals (Resume & Project Architecture)
+   ============================================================ */
+
+/* Overlay stay dark for focus */
+
+/* Resume modal main container */
+html:not(.dark) .fixed.inset-0.z-50 .bg-slate-900.border.border-slate-700\/80 {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Modal top bar */
+html:not(.dark) .fixed.inset-0.z-50 .bg-slate-950\/80 {
+  background-color: rgba(248, 250, 252, 0.97) !important;
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .bg-slate-950\/80 .text-white,
+html:not(.dark) .fixed.inset-0.z-50 .bg-slate-950\/80 .text-slate-300 {
+  color: #1E293B !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .bg-slate-950\/80 .text-slate-400,
+html:not(.dark) .fixed.inset-0.z-50 .bg-slate-950\/80 .text-slate-500 {
+  color: #64748B !important;
+}
+
+/* Modal body text */
+html:not(.dark) .fixed.inset-0.z-50 .text-slate-200 {
+  color: #1E293B !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .text-slate-300 {
+  color: #334155 !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .text-slate-400 {
+  color: #64748B !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .text-white {
+  color: #0F172A !important;
+}
+
+/* Education chips inside resume modal */
+html:not(.dark) .fixed.inset-0.z-50 .bg-slate-800\/80 {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+  color: #334155 !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .bg-slate-800 {
+  background-color: #F1F5F9 !important;
+  color: #1E293B !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .border-slate-800 {
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .border-slate-700\/80 {
+  border-color: #E2E8F0 !important;
+}
+
+/* Project modal */
+html:not(.dark) .fixed.inset-0.z-50 .bg-cloud-surface {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .bg-cloud-card\/60 {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .bg-cloud-bg {
+  background-color: #F8FAFC !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .bg-cloud-card {
+  background-color: #F1F5F9 !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .bg-cloud-card\/80 {
+  background-color: rgba(241, 245, 249, 0.97) !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .bg-cloud-card\/40 {
+  background-color: rgba(241, 245, 249, 0.7) !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .bg-slate-900\/60 {
+  background-color: #F4F7FA !important;
+  border-color: #E2E8F0 !important;
+  color: #334155 !important;
+}
+
+/* Flow step badge in project modal */
+html:not(.dark) .fixed.inset-0.z-50 .bg-cloud-card.border-cloud-border.text-xs.font-mono {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+  color: #1E293B !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .bg-slate-900.border-slate-700 {
+  background-color: #E8EEF6 !important;
+  border-color: #CBD5E1 !important;
+  color: #FF9900 !important;
+}
+
+/* Component type badges in project modal */
+html:not(.dark) .fixed.inset-0.z-50 .bg-sky-950\/80 {
+  background-color: #EBF5FF !important;
+  border-color: #BAE6FD !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .bg-emerald-950\/80 {
+  background-color: #ECFDF5 !important;
+  border-color: #A7F3D0 !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .bg-indigo-950\/80 {
+  background-color: #EEF2FF !important;
+  border-color: #C7D2FE !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .bg-amber-950\/80 {
+  background-color: #FFFBEB !important;
+  border-color: #FDE68A !important;
+}
+
+html:not(.dark) .fixed.inset-0.z-50 .bg-red-950\/80 {
+  background-color: #FEF2F2 !important;
+  border-color: #FECACA !important;
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+
+@layer utilities {
+  .bg-grid-tech {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(120, 140, 180, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(120, 140, 180, 0.08) 1px, transparent 1px);
+  }
+
+  .bg-dots-tech {
+    background-size: 24px 24px;
+    background-image: radial-gradient(rgba(120, 140, 180, 0.15) 1px, transparent 1px);
+  }
+
+  .glass-panel {
+    background: rgba(13, 19, 34, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card {
+    background: rgba(18, 26, 47, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .text-glow-orange {
+    text-shadow: 0 0 20px rgba(255, 153, 0, 0.5);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+  }
+
+  .terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background-color: #38BDF8;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
