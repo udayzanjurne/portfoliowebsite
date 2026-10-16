@@ -54,7 +54,7 @@ export const LinuxLab: React.FC = () => {
         ...prev,
         {
           command: 'help',
-          output: 'Available simulated commands: whoami, pwd, ls -la, systemctl status nginx, journalctl, df -h, free -h, ps aux, ssh, chmod, chown, clear',
+          output: 'Available simulated commands: whoami, pwd, ls -la, systemctl status nginx, systemctl status apache2, journalctl, df -h, free -h, ps aux, ssh, chmod, chown, clear',
           timestamp: new Date().toLocaleTimeString('en-US', { hour12: false })
         }
       ]);

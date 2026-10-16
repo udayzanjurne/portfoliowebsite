@@ -149,6 +149,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               <span className="px-2.5 py-1 rounded bg-slate-900/90 border border-slate-700/60 text-slate-300 flex items-center gap-1.5">
                 <Terminal className="w-3 h-3 text-amber-400" /> Bash & Python
               </span>
+              <span className="px-2.5 py-1 rounded bg-slate-900/90 border border-slate-700/60 text-slate-300 flex items-center gap-1.5">
+                <Globe className="w-3 h-3 text-teal-400" /> Nginx • Apache • Vercel
+              </span>
             </div>
 
             {/* CTAs */}
@@ -223,6 +226,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 <span className="text-sky-300">VPC</span>
                 <span>•</span>
                 <span className="text-emerald-400">Nginx</span>
+                <span>•</span>
+                <span className="text-amber-400">Apache</span>
+                <span>•</span>
+                <span className="text-teal-400">Vercel</span>
                 <span>•</span>
                 <span className="text-amber-400">ALB</span>
                 <span>•</span>

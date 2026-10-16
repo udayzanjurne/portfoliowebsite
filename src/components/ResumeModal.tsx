@@ -19,6 +19,7 @@ import {
   STRENGTHS_LIST 
 } from '../data/portfolioData';
 import { GithubIcon } from './GithubIcon';
+import profilePhoto from '../assets/profile.jpg';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -67,7 +68,7 @@ TECHNICAL SKILLS:
 - Scripting: Python, Bash, Linux Shell Commands, Basic Automation
 - Databases: MySQL, Amazon DynamoDB, DBMS, Database Fundamentals
 - Tools: Git, GitHub, VS Code, AWS Management Console, VirtualBox
-- Web Technologies: HTML, CSS
+- Web Servers & Hosting: Nginx, Apache HTTP Server, Vercel, Hostinger, HTML, CSS
 
 PROJECTS:
 1. AWS EC2 Web Application (Linux & AWS Deployment)
@@ -142,34 +143,46 @@ Linux Troubleshooting, Cloud Fundamentals, Networking Fundamentals, Problem Solv
         <div className="overflow-y-auto p-6 sm:p-10 space-y-6 text-slate-200 font-sans custom-scrollbar print:p-6 print:text-black print:overflow-visible">
           
           {/* Header */}
-          <div className="border-b border-slate-700/80 pb-6 print:border-black">
-            <h1 id="modal-resume-title" className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight print:text-black">
-              {PERSONAL_INFO.name}
-            </h1>
-            <p className="text-sm font-mono text-aws-orange font-semibold mt-1 print:text-black">
-              {PERSONAL_INFO.title}
-            </p>
+          <div className="border-b border-slate-700/80 pb-6 print:border-black flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h1 id="modal-resume-title" className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight print:text-black">
+                {PERSONAL_INFO.name}
+              </h1>
+              <p className="text-sm font-mono text-aws-orange font-semibold mt-1 print:text-black">
+                {PERSONAL_INFO.title}
+              </p>
 
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-3 text-xs font-mono text-slate-300 print:text-black">
-              <span className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-slate-400 print:hidden" />
-                {PERSONAL_INFO.location}
-              </span>
-              <span>•</span>
-              <a href={`mailto:${PERSONAL_INFO.email}`} className="flex items-center gap-1.5 hover:underline">
-                <Mail className="w-3.5 h-3.5 text-slate-400 print:hidden" />
-                {PERSONAL_INFO.email}
-              </a>
-              <span>•</span>
-              <a href={`tel:${PERSONAL_INFO.phone}`} className="flex items-center gap-1.5 hover:underline">
-                <Phone className="w-3.5 h-3.5 text-slate-400 print:hidden" />
-                {PERSONAL_INFO.phone}
-              </a>
-              <span>•</span>
-              <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:underline">
-                <GithubIcon className="w-3.5 h-3.5 text-slate-400 print:hidden" />
-                github.com/udayzanjurne
-              </a>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-3 text-xs font-mono text-slate-300 print:text-black">
+                <span className="flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-slate-400 print:hidden" />
+                  {PERSONAL_INFO.location}
+                </span>
+                <span>•</span>
+                <a href={`mailto:${PERSONAL_INFO.email}`} className="flex items-center gap-1.5 hover:underline">
+                  <Mail className="w-3.5 h-3.5 text-slate-400 print:hidden" />
+                  {PERSONAL_INFO.email}
+                </a>
+                <span>•</span>
+                <a href={`tel:${PERSONAL_INFO.phone}`} className="flex items-center gap-1.5 hover:underline">
+                  <Phone className="w-3.5 h-3.5 text-slate-400 print:hidden" />
+                  {PERSONAL_INFO.phone}
+                </a>
+                <span>•</span>
+                <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:underline">
+                  <GithubIcon className="w-3.5 h-3.5 text-slate-400 print:hidden" />
+                  github.com/udayzanjurne
+                </a>
+              </div>
+            </div>
+
+            <div className="shrink-0 hidden sm:block print:hidden">
+              <div className="w-16 h-20 sm:w-20 sm:h-24 rounded-xl overflow-hidden border-2 border-slate-700 shadow-md">
+                <img
+                  src={profilePhoto}
+                  alt={PERSONAL_INFO.name}
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
             </div>
           </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Terminal, Cloud, Network, ShieldCheck, HardDrive, Cpu, Compass } from 'lucide-react';
+import { Terminal, Cloud, Network, ShieldCheck, Cpu, Compass, Server, Globe } from 'lucide-react';
 import { ABOUT_CARDS } from '../data/portfolioData';
+import profilePhoto from '../assets/profile.jpg';
 
 export const About: React.FC = () => {
   const getIcon = (iconName: string) => {
@@ -18,34 +19,98 @@ export const About: React.FC = () => {
 
   const coreCompetencies = [
     { label: "Linux Command Line & Filesystem Hierarchy", icon: Terminal },
+    { label: "Web Servers & Reverse Proxies (Nginx & Apache)", icon: Server },
+    { label: "Hosting Platforms (AWS, Vercel & Hostinger)", icon: Globe },
     { label: "User, Group & File Permissions (chmod/chown)", icon: ShieldCheck },
     { label: "Process Monitoring & systemd Service Units", icon: Cpu },
-    { label: "Package Management & journalctl Log Checking", icon: HardDrive },
-    { label: "AWS VPC, EC2, IAM, S3, RDS & Route 53 Fundamentals", icon: Cloud },
+    { label: "AWS VPC, EC2, IAM, S3, RDS & Route 53", icon: Cloud },
     { label: "Computer Networking (TCP/IP, Subnetting, CIDR, DNS)", icon: Network },
     { label: "Basic Automation using Python & Bash Shell Scripts", icon: Terminal },
-    { label: "Security Groups & Network Perimeter Defense", icon: ShieldCheck },
   ];
 
   return (
     <section id="about" className="py-20 relative bg-cloud-bg/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="flex flex-col items-start mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cloud-card border border-cloud-border text-xs font-mono text-aws-orange mb-3">
-            <Compass className="w-3.5 h-3.5" />
-            <span>01 // PROFESSIONAL SUMMARY</span>
+        {/* Section Header with Professional Photo & Bio */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12">
+          
+          {/* Bio & Professional Summary */}
+          <div className="lg:col-span-8 flex flex-col items-start order-2 lg:order-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cloud-card border border-cloud-border text-xs font-mono text-aws-orange mb-3">
+              <Compass className="w-3.5 h-3.5" />
+              <span>01 // PROFESSIONAL SUMMARY</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Cloud & Infrastructure Enthusiast
+            </h2>
+            <p className="mt-3 text-slate-300 text-base leading-relaxed">
+              I am an entry-level cloud and infrastructure candidate with a{' '}
+              <strong className="text-white font-semibold">Bachelor of Vocational Software Development</strong> from
+              Yashavantrao Chavan Institute of Science, Satara, reinforced by hands-on academic and lab experience.
+              My passion lies at the intersection of robust Linux systems, resilient AWS architecture, web server management (Nginx & Apache), and modern cloud deployment platforms (Vercel & Hostinger).
+            </p>
+            <p className="mt-2.5 text-slate-400 text-sm leading-relaxed">
+              Experienced in configuring virtual hosts, reverse proxies, automated deployments, and secure multi-tier cloud environments with strict adherence to security and reliability best practices.
+            </p>
+
+            {/* Quick Highlight Pills */}
+            <div className="mt-4 flex flex-wrap items-center gap-2 text-xs font-mono">
+              <span className="px-2.5 py-1 rounded bg-cloud-card border border-cloud-border text-slate-300 flex items-center gap-1.5">
+                <span className="text-aws-orange">🎓</span> B.Voc Software Development
+              </span>
+              <span className="px-2.5 py-1 rounded bg-cloud-card border border-cloud-border text-slate-300 flex items-center gap-1.5">
+                <span className="text-cloud-sky">📍</span> Satara, Maharashtra
+              </span>
+              <span className="px-2.5 py-1 rounded bg-cloud-card border border-cloud-border text-emerald-400 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Web Servers & Cloud Ready
+              </span>
+            </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Cloud & Infrastructure Enthusiast
-          </h2>
-          <p className="mt-3 text-slate-300 text-base max-w-3xl leading-relaxed">
-            I am an entry-level cloud and infrastructure candidate with a{' '}
-            <strong className="text-white font-semibold">Bachelor of Vocational Software Development</strong> from
-            Yashavantrao Chavan Institute of Science, Satara, reinforced by hands-on academic and lab experience.
-            My passion lies at the intersection of robust Linux systems, resilient AWS architecture, and automated cloud workflows.
-          </p>
+
+          {/* Professional Photo Card */}
+          <div className="lg:col-span-4 flex justify-center lg:justify-end order-1 lg:order-2">
+            <div className="relative group w-56 sm:w-64 md:w-72">
+              {/* Ambient Glow */}
+              <div className="absolute -inset-1 bg-gradient-to-tr from-aws-orange/40 via-sky-500/20 to-emerald-400/30 rounded-2xl blur-md opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+              {/* Card Container */}
+              <div className="relative rounded-2xl overflow-hidden border border-cloud-border bg-cloud-surface shadow-2xl transition-all duration-300 group-hover:border-aws-orange/60">
+                {/* Technical Window Bar */}
+                <div className="flex items-center justify-between px-3 py-2 bg-slate-950/80 border-b border-cloud-border/60">
+                  <div className="flex items-center space-x-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
+                  </div>
+                  <span className="text-[10px] font-mono text-slate-400">uday-profile.jpg</span>
+                </div>
+
+                {/* Photo */}
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-slate-900">
+                  <img
+                    src={profilePhoto}
+                    alt="Uday Zanjurne - Linux Administrator & AWS Cloud Engineer"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent pointer-events-none"></div>
+
+                  {/* Overlaid Badges */}
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-xs font-mono">
+                    <span className="px-2 py-0.5 rounded bg-slate-900/90 border border-slate-700/80 text-white font-medium text-[11px] shadow-sm">
+                      UDAY ZANJURNE
+                    </span>
+                    <span className="px-2 py-0.5 rounded bg-emerald-950/90 border border-emerald-600/60 text-emerald-300 font-semibold text-[10px] flex items-center gap-1 shadow-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                      ACTIVE
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         {/* 3 Core Information Cards */}

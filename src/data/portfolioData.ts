@@ -75,32 +75,32 @@ export const PERSONAL_INFO = {
   phone: "+91 9356991399",
   github: "https://github.com/udayzanjurne",
   availabilityStatus: "Open to Entry-Level Cloud & Infrastructure Roles",
-  positioning: "Entry-level cloud and infrastructure candidate with hands-on academic/lab experience in Linux administration, AWS cloud, networking, Python, Bash scripting, troubleshooting, deployment, and cloud architecture.",
-  shortBio: "Motivated and detail-oriented fresher with a strong foundation in Linux administration, computer networking, AWS cloud fundamentals, Python, and Bash scripting.",
+  positioning: "Entry-level cloud and infrastructure candidate with hands-on academic/lab experience in Linux administration, AWS cloud, web servers (Nginx, Apache), deployment platforms (Vercel, Hostinger), networking, Python, Bash scripting, troubleshooting, deployment, and cloud architecture.",
+  shortBio: "Motivated and detail-oriented fresher with a strong foundation in Linux administration, computer networking, AWS cloud fundamentals, web servers (Nginx, Apache), hosting platforms (Vercel, Hostinger), Python, and Bash scripting.",
   tagline: "Building practical cloud infrastructure, Linux environments, secure networks, and reliable AWS deployments."
 };
 
 export const ABOUT_CARDS = [
   {
-    title: "Linux Administration",
-    subtitle: "OS Core & Operations",
+    title: "Linux & Web Servers",
+    subtitle: "OS Core & Web Services",
     icon: "Terminal",
-    description: "Hands-on experience configuring Ubuntu environments, managing users, permissions, process monitoring, systemd unit files, and journalctl log troubleshooting.",
-    tags: ["Ubuntu", "systemd", "journalctl", "SSH", "chmod/chown", "cron", "Logs"]
+    description: "Hands-on experience configuring Ubuntu environments, managing users, permissions, process monitoring, systemd unit files, journalctl troubleshooting, and running Nginx & Apache web servers.",
+    tags: ["Ubuntu", "Nginx", "Apache", "systemd", "journalctl", "SSH", "chmod/chown", "cron"]
   },
   {
     title: "AWS Cloud Fundamentals",
     subtitle: "Cloud Infrastructure",
     icon: "Cloud",
-    description: "Architectural and lab deployment expertise in Amazon VPC, EC2 instances, S3 storage, IAM security policies, RDS, and Application Load Balancers.",
+    description: "Architectural and lab deployment expertise in Amazon VPC, EC2 instances, S3 storage, IAM security policies, RDS, Application Load Balancers, and DNS routing.",
     tags: ["VPC", "EC2", "S3", "IAM", "RDS", "ALB", "Route 53", "EKS"]
   },
   {
-    title: "Networking & Automation",
-    subtitle: "Connectivity & Scripting",
+    title: "Networking & Deployment",
+    subtitle: "Connectivity & Platforms",
     icon: "Network",
-    description: "Solid grasp of CIDR, subnetting, TCP/IP, DNS, Security Groups, alongside practical Bash and Python scripting for administrative automation.",
-    tags: ["TCP/IP", "DNS", "Subnetting", "CIDR", "Security Groups", "Bash", "Python"]
+    description: "Solid grasp of CIDR, subnetting, TCP/IP, DNS, Security Groups, alongside practical hosting on Vercel and Hostinger with Bash & Python automation.",
+    tags: ["TCP/IP", "DNS", "Subnetting", "Vercel", "Hostinger", "Security Groups", "Bash", "Python"]
   }
 ];
 
@@ -206,10 +206,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   },
   {
     id: "web",
-    name: "Web Technologies",
-    description: "Frontend standards used for hosted applications and health-check web interfaces.",
+    name: "Web Servers & Hosting Platforms",
+    description: "Production web server configurations, reverse proxies, static hosting, and cloud deployment platforms.",
     iconName: "Globe",
     skills: [
+      { name: "Nginx", tag: "Web Server & Reverse Proxy", description: "Deploying high-performance web servers, reverse proxy pass configuration, SSL/TLS termination, access logging, and worker process tuning." },
+      { name: "Apache HTTP Server", tag: "Web Server", description: "Managing Apache virtual hosts, .htaccess directives, mod_rewrite rules, directory security, and multi-site hosting on Linux." },
+      { name: "Vercel", tag: "Cloud Deployment", description: "Configuring automated Git-based continuous deployment (CI/CD), serverless edge routing, environment variables, and modern web application hosting." },
+      { name: "Hostinger", tag: "Cloud & VPS Hosting", description: "Configuring domain DNS records, VPS server administration, hPanel/cPanel management, SSL installation, and web project hosting." },
       { name: "HTML", tag: "Markup", description: "Semantic document structuring, status response pages, and clean accessible markup." },
       { name: "CSS", tag: "Styling", description: "Responsive layouts, styling web application interfaces, and container alignment." }
     ]
@@ -553,6 +557,15 @@ export const LINUX_COMMANDS: LinuxCommand[] = [
     exampleUsage: "$ systemctl status nginx",
     simulatedOutput: "● nginx.service - A high performance web server and a reverse proxy server\n     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)\n     Active: active (running) since Sat 2026-09-26 10:14:22 UTC; 4h 32min ago\n       Docs: man:nginx(8)\n   Main PID: 18420 (nginx)\n      Tasks: 3 (limit: 1143)\n     Memory: 6.8M\n        CPU: 182ms\n     CGroup: /system.slice/nginx.service\n             ├─18420 \"nginx: master process /usr/sbin/nginx -g daemon on; master_process on;\"\n             ├─18421 \"nginx: worker process\"\n             └─18422 \"nginx: worker process\"",
     sysadminScenario: "Core troubleshooting step when verifying web server availability or investigating why an EC2 instance failed its health check."
+  },
+  {
+    command: "systemctl status",
+    args: "apache2",
+    category: "services",
+    purpose: "Inspect the service operational state, active MPM workers, and configuration bindings of Apache HTTP Server.",
+    exampleUsage: "$ systemctl status apache2",
+    simulatedOutput: "● apache2.service - The Apache HTTP Server\n     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)\n     Active: active (running) since Sat 2026-09-26 11:05:10 UTC; 3h 41min ago\n       Docs: https://httpd.apache.org/docs/2.4/\n   Main PID: 21450 (apache2)\n      Tasks: 55 (limit: 1143)\n     Memory: 18.2M\n        CPU: 245ms\n     CGroup: /system.slice/apache2.service\n             ├─21450 /usr/sbin/apache2 -k start\n             ├─21453 /usr/sbin/apache2 -k start\n             └─21454 /usr/sbin/apache2 -k start",
+    sysadminScenario: "Verifying that Apache daemon is actively running, loaded virtual hosts are responding on ports 80/443, and checking error log pointers."
   },
   {
     command: "journalctl",
